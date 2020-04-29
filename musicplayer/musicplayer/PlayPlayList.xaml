@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="musicplayer.PlayPlayList">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#000000">
+            <StackLayout BackgroundColor="#000000">
+                <ListView x:Name="PLayList" ItemSelected="PLayList_ItemSelected" ItemsSource="{Binding}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding}" TextColor="#ffffff" FontSize="14" ></Label>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <BoxView BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" HeightRequest="3"></BoxView>
+            <StackLayout BackgroundColor="#000000" VerticalOptions="EndAndExpand" HorizontalOptions="Center">
+                <Grid HeightRequest="60">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Clicked="Button_Clicked" Text="«" FontSize="20" TextColor="#ffffff" BorderColor="#ffffff" BorderWidth="3" BackgroundColor="#000000" BorderRadius="50" WidthRequest="50" HeightRequest="50" Grid.Column="0" HorizontalOptions="End"></Button>
+                    <Button x:Name="PlayButton"  Clicked="PlayButton_Clicked" Text="ᐅ" FontSize="20"  TextColor="#ffffff" BorderColor="#ffffff" BorderWidth="3" BackgroundColor="#000000" BorderRadius="50" WidthRequest="50" HeightRequest="50" Grid.Column="1" HorizontalOptions="Center"></Button>
+                    <Button Clicked="Button_Clicked_1" Text="»" FontSize="20" TextColor="#ffffff" BorderColor="#ffffff" BorderWidth="3" BackgroundColor="#000000" BorderRadius="50" WidthRequest="50" HeightRequest="50" Grid.Column="2" HorizontalOptions="Start"></Button>
+                   
+                </Grid>
+                <StackLayout>
+                    <Slider x:Name="sliderBar" ValueChanged="SliderBar_ValueChanged" WidthRequest="300"></Slider>
+                    <Label x:Name="sliderTime" HorizontalOptions="Center" TextColor="#ffffff" ></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+   
+</ContentPage>

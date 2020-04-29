@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  
+             x:Class="musicplayer.MainPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="master" BackgroundColor="#000000">
+            <ContentPage.Content>
+                <StackLayout Padding="5,5,5,5">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Image WidthRequest="65" HeightRequest="65" Aspect="AspectFit" Source="MyMusic.png" VerticalOptions="Center"></Image>
+                        <Label Text="MyMusic" Font="34" VerticalOptions="Center" TextColor="Azure"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                        <Button BorderWidth="3" BorderColor="#ffffff" TextColor="#ffffff" BorderRadius="50" WidthRequest="150" HeightRequest="50" Text="AllMusic" FontSize="20" BackgroundColor="#000000" Clicked="Button2_Click" HorizontalOptions="FillAndExpand"></Button>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                        <Button BorderWidth="3" BorderColor="#ffffff" TextColor="#ffffff" BorderRadius="50" WidthRequest="150" HeightRequest="50"  Text="Playlist"  FontSize="20" BackgroundColor="#000000" Clicked="Button1_Click" HorizontalOptions="FillAndExpand"></Button>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                        <Button BorderWidth="3" BorderColor="#ffffff" TextColor="#ffffff" BorderRadius="50" WidthRequest="150" HeightRequest="50" Text="Radio" FontSize="20" BackgroundColor="#000000" Clicked="Button_Clicked" HorizontalOptions="FillAndExpand"></Button>
+                    </StackLayout>
+                </StackLayout>
+                            
+            </ContentPage.Content>
+ 
+        </ContentPage>
+                  
+    </MasterDetailPage.Master>
+   
+   
+   </MasterDetailPage>

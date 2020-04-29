@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="musicplayer.Playlist"
+             Title="PlayList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="toolbar" Text="⟲" Clicked="ToolbarItem_Clicked">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#000000">
+            <StackLayout BackgroundColor="#000000">
+                <ListView x:Name="PLayLists" ItemSelected="PLayLists_ItemSelected" ItemsSource="{Binding}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding}" TextColor="#ffffff" FontSize="14" ></Label>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout BackgroundColor="#000000">
+                <Button BorderWidth="3" BorderColor="#ffffff" TextColor="#ffffff" BorderRadius="50" WidthRequest="150" HeightRequest="50" Text="AddList" FontSize="20" BackgroundColor="#000000" Clicked="Button_Clicked" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"></Button>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

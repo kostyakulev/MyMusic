@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:widget="clr-namespace:Android.Widget;assembly=Mono.Android"
+             mc:Ignorable="d"
+             x:Class="musicplayer.Radio"
+             Title="Radio">
+    <ContentPage.ToolbarItems >
+        <ToolbarItem  Text="⟲" Clicked="ToolbarItem_Clicked">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#000000">
+            <StackLayout BackgroundColor="#000000" >
+                <ListView x:Name="radioList" ItemsSource="{Binding}" ItemSelected="RadioList_ItemSelected" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding}" TextColor="#ffffff" FontSize="30" ></Label>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate> 
+                    </ListView.ItemTemplate>
+                </ListView>  
+            </StackLayout>      
+            <StackLayout BackgroundColor="#000000" >
+                <BoxView BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" HeightRequest="3"></BoxView>
+            </StackLayout>
+            <StackLayout>
+                <Grid HeightRequest="85">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Margin="10,0,10,0" BorderWidth="3" BorderColor="#ffffff" TextColor="#ffffff" BorderRadius="50" WidthRequest="150" HeightRequest="50" Text="+" FontSize="20" BackgroundColor="#000000" Clicked="Button_Clicked" VerticalOptions="CenterAndExpand" HorizontalOptions="Fill"></Button>
+                    <Button Grid.Column="4" Margin="10,0,10,0" BorderWidth="3" BorderColor="#ffffff" TextColor="#ffffff" BorderRadius="50" WidthRequest="150" HeightRequest="50" Text="DEL" FontSize="15" BackgroundColor="#000000" Clicked="Button_Clicked_1" VerticalOptions="CenterAndExpand" HorizontalOptions="Fill"></Button>
+                    <Button x:Name="play" Grid.Column="2" BorderWidth="3" BorderColor="#ffffff" TextColor="#ffffff" BorderRadius="50" WidthRequest="50" HeightRequest="50" Text="➤" FontSize="20" BackgroundColor="#000000" Clicked="Button_Clicked_2" VerticalOptions="Start" HorizontalOptions="Center"></Button>
+                    <Button x:Name="stop" Grid.Column="1" BorderWidth="3" BorderColor="#ffffff" TextColor="#ffffff" BorderRadius="50" WidthRequest="50" HeightRequest="50" Text="⃞" FontSize="13" BackgroundColor="#000000" Clicked="Stop_Clicked" VerticalOptions="Start" HorizontalOptions="Center"></Button>
+                   
+                </Grid>
+                             
+            </StackLayout>
+        </StackLayout>       
+        
+       
+        
+    </ContentPage.Content>
+</ContentPage> 
